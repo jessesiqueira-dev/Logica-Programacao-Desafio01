@@ -2,7 +2,7 @@ function calcularRankeadas(vitorias, derrotas) {
   let saldoVitorias = vitorias - derrotas;
   let nivel = "";
 
-  if (vitorias < 10) {
+  if (vitorias <= 10) {
     nivel = "Ferro";
   } else if (vitorias >= 11 && vitorias <= 20) {
     nivel = "Bronze";
@@ -20,18 +20,18 @@ function calcularRankeadas(vitorias, derrotas) {
 
   return { saldoVitorias, nivel };
 }
-
-
 let partidas = [
-  { vitorias: 75, derrotas: 20 },
-  { vitorias: 12, derrotas: 5 },
-  { vitorias: 110, derrotas: 30 }
+    { vitorias: 175, derrotas: 20 },
+    { vitorias: 12, derrotas: 5 },
+    { vitorias: 55, derrotas: 20 },
 ];
-
 for (let i = 0; i < partidas.length; i++) {
-  let resultado = calcularRankeadas(partidas[i].vitorias, partidas[i].derrotas);
+    let resultado = calcularRankeadas(
+        partidas[i].vitorias,
+         partidas[i].derrotas
+        );
 
-  console.log(
+    console.log(
     `O Herói tem de saldo de ${resultado.saldoVitorias} está no nível de ${resultado.nivel}`
   );
 }
